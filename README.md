@@ -6,33 +6,40 @@
 
 ```text
 $ cgycorey --whoami
-▸ builder of coding agents · MCP tooling · quant systems
+▸ building AI agents · LLM applications · quant finance
+```
+
+```text
+$ cgycorey --stack
+▸ python    fastapi    uv
+▸ llms      mcp        agent loops
+▸ pandas    numpy      quant
 ```
 
 </div>
 
 | | |
 |---|---|
-| **focus** | agentic coding · MCP servers · trading / quant research |
-| **stack** | Python · TypeScript · FastAPI · uv · git |
-| **now** | contributing to [HKUDS/Vibe-Trading](https://github.com/HKUDS/Vibe-Trading) & [OpenOPC](https://github.com/HKUDS/OpenOPC) |
-| **signal** | 22 repos · 10 followers · Pull Shark ×2 · Arctic Code Vault |
+| **focus** | AI agents · LLM applications · quantitative finance |
+| **now** | shipping agentic systems, MCP servers, and quant tooling |
+
+<br/>
+
+### ▸ contributions
+
+| project | involvement |
+|---|---|
+| [HKUDS/Vibe-Trading](https://github.com/HKUDS/Vibe-Trading) | swarm run replay · options-chain validation · MCP tooling |
+| [HKUDS/OpenOPC](https://github.com/HKUDS/OpenOPC) | AI-native company agents |
+| [rooster-code](https://github.com/cgycorey/rooster-code) | agentic coding framework |
+| [searxng_search_mcp](https://github.com/cgycorey/searxng_search_mcp) | search wired into model context |
+| [visual-mcp](https://github.com/cgycorey/visual-mcp) | computer vision for models |
 
 <br/>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/cgycorey/cgycorey/main/email.svg" alt="contact" width="360" />
 </p>
-
-<br/>
-
-### ▸ missions
-
-| lane | repos | what |
-|---|---|---|
-| **agents** | [rooster-code](https://github.com/cgycorey/rooster-code) · [OpenOPC](https://github.com/cgycorey/OpenOPC) | agentic coding & AI-native companies |
-| **mcp** | [searxng_search_mcp](https://github.com/cgycorey/searxng_search_mcp) · [visual-mcp](https://github.com/cgycorey/visual-mcp) | model-context tooling |
-| **trading** | [Vibe-Trading](https://github.com/cgycorey/Vibe-Trading) | personal AI trading agent |
 
 <br/>
 
