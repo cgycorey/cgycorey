@@ -1,26 +1,63 @@
 #!/usr/bin/env python3
 """Regenerate activity.svg — last 53 weeks of GitHub contributions.
 
-Fetches GitHub's own contribution calendar (public) and renders a heatmap
-styled to match the profile banner. Runs weekly via GitHub Actions.
-Highlights the current (latest) week with a pulsing accent frame.
+Fetches GitHub's own contribution calendar (public) plus API totals
+(commits + PRs + issues over 365 days) and renders a heatmap styled to
+match the profile banner. Runs weekly via GitHub Actions.
 """
 import datetime
+import json
 import os
 import re
+import subprocess
 import sys
+import urllib.parse
 import urllib.request
 
 OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "activity.svg")
-URL = "https://github.com/users/cgycorey/contributions"
+OWNER = "cgycorey"
+CAL_URL = "https://github.com/users/cgycorey/contributions"
 
 MONO = "ui-monospace, 'Cascadia Mono', 'SF Mono', 'Ubuntu Mono', Menlo, Consolas, monospace"
 CELL, GAP, PAD = 11, 3, 16
 LV = ["#161d1a", "#22382a", "#3d5f36", "#6f9e3f", "#9dff3d"]
 
 
+def api_token() -> str | None:
+    token = os.environ.get("GITHUB_TOKEN")
+    if token:
+        return token
+    cred = subprocess.run(
+        ["git", "credential", "fill"],
+        input="protocol=https\nhost=github.com\n\n",
+        capture_output=True, text=True, check=False,
+    ).stdout
+    for line in cred.splitlines():
+        if line.startswith("password="):
+            return line.split("=", 1)[1]
+    return None
+
+
+def gh_json(url: str) -> dict:
+    headers = {"Accept": "application/vnd.github+json", "User-Agent": "profile-activity"}
+    token = api_token()
+    if token:
+        headers["Authorization"] = f"token {token}"
+    req = urllib.request.Request(url, headers=headers)
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        return json.loads(resp.read())
+
+
+def search_count(q: str, base: str = "issues") -> int:
+    url = f"https://api.github.com/search/{base}?q={urllib.parse.quote(q)}&per_page=1"
+    try:
+        return int(gh_json(url).get("total_count", 0))
+    except (OSError, ValueError, KeyError):
+        return -1
+
+
 def fetch_levels() -> dict:
-    req = urllib.request.Request(URL, headers={"User-Agent": "profile-activity"})
+    req = urllib.request.Request(CAL_URL, headers={"User-Agent": "profile-activity"})
     with urllib.request.urlopen(req, timeout=30) as resp:
         html = resp.read().decode("utf-8", "replace")
     pairs = re.findall(r'data-date="([^"]+)"[^>]*data-level="(\d+)"', html)
@@ -44,7 +81,18 @@ def main() -> int:
         weeks = weeks[-53:]
 
     n = len(weeks)
-    active = sum(1 for l in days.values() if l > 0)
+    since = (last - datetime.timedelta(days=364)).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    commits = search_count(f"author:{OWNER} committer-date:>{since}", "commits")
+    prs = search_count(f"type:pr author:{OWNER} created:>{since}")
+    issues = search_count(f"type:issue author:{OWNER} created:>{since}")
+    total = sum(x for x in (commits, prs, issues) if x >= 0)
+
+    def v(x: int) -> str:
+        return "…" if x < 0 else f"{x:,}"
+
+    breakdown = f"{v(commits)} commits · {v(prs)} PRs · {v(issues)} issues"
+
     w = PAD * 2 + n * CELL + (n - 1) * GAP
     h = 72 + 7 * CELL + 6 * GAP + 18
 
@@ -70,7 +118,6 @@ def main() -> int:
             fill = LV[lvl] if 0 <= lvl < len(LV) else LV[0]
             cells += f'<rect x="{x_of(ci)}" y="{y_of(ri)}" width="{CELL}" height="{CELL}" rx="2" fill="{fill}"/>'
 
-    # highlight: pulsing frame + NOW tag on the current (latest) week column
     last_ci = n - 1
     fx, fy = x_of(last_ci) - 2, y_of(0) - 2
     fw, fh = CELL + 4, 7 * CELL + 6 * GAP + 4
@@ -94,8 +141,9 @@ def main() -> int:
   <rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" fill="#0b0e0d" stroke="#1c2421" rx="6"/>
   <text x="{PAD}" y="30" font-family="{MONO}" font-size="10" letter-spacing="2" fill="#46524d">ACTIVITY — LAST {n} WEEKS</text>
   <rect x="{PAD}" y="38" width="24" height="2" fill="#9dff3d"/>
-  <text x="{PAD}" y="60" font-family="{MONO}" font-size="26" font-weight="700" fill="#9dff3d">{active}</text>
-  <text x="{PAD + 70}" y="60" font-family="{MONO}" font-size="11" fill="#64746e">active days</text>
+  <text x="{PAD}" y="60" font-family="{MONO}" font-size="26" font-weight="700" fill="#9dff3d">{v(total)}</text>
+  <text x="{PAD + 78}" y="60" font-family="{MONO}" font-size="11" fill="#64746e">total contributions · 365 days</text>
+  <text x="{w - PAD}" y="60" font-family="{MONO}" font-size="11" text-anchor="end" fill="#3fe06f">{breakdown}</text>
   {ml}
   {cells}
   {highlight}
@@ -105,7 +153,7 @@ def main() -> int:
 '''
     with open(OUT, "w", encoding="utf-8") as f:
         f.write(svg)
-    print(f"activity.svg: {n} weeks, {active} active days, current week highlighted")
+    print(f"activity.svg: {n} weeks, total={total} ({breakdown})")
     return 0
 
 
