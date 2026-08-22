@@ -21,6 +21,7 @@ $ cgycorey --stack
 | | |
 |---|---|
 | **focus** | AI agents · LLM applications · quantitative finance |
+| **stack** | Python · FastAPI · LLM APIs · uv |
 | **now** | shipping agentic systems, MCP servers, and quant tooling |
 
 <br/>
