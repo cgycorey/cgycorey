@@ -86,7 +86,6 @@ def main() -> int:
     commits = search_count(f"author:{OWNER} committer-date:>{since}", "commits")
     prs = search_count(f"type:pr author:{OWNER} created:>{since}")
     issues = search_count(f"type:issue author:{OWNER} created:>{since}")
-    total = sum(x for x in (commits, prs, issues) if x >= 0)
 
     # all-time (lifetime) totals for the headline
     commits_all = search_count(f"author:{OWNER}", "commits")
@@ -96,9 +95,6 @@ def main() -> int:
 
     def v(x: int) -> str:
         return "…" if x < 0 else f"{x:,}"
-
-    breakdown = f"{v(commits)} commits · {v(prs)} PRs · {v(issues)} issues · 365d"
-    breakdown_all = f"{v(commits_all)} commits · {v(prs_all)} PRs · {v(issues_all)} issues · all time"
 
     w = PAD * 2 + n * CELL + (n - 1) * GAP
     h = 72 + 7 * CELL + 6 * GAP + 18
@@ -149,8 +145,8 @@ def main() -> int:
   <text x="{PAD}" y="30" font-family="{MONO}" font-size="10" letter-spacing="2" fill="#46524d">ACTIVITY — LAST {n} WEEKS</text>
   <rect x="{PAD}" y="38" width="24" height="2" fill="#9dff3d"/>
   <text x="{PAD}" y="60" font-family="{MONO}" font-size="26" font-weight="700" fill="#9dff3d">{v(total_all)}</text>
-  <text x="{PAD + 78}" y="60" font-family="{MONO}" font-size="11" fill="#64746e">total contributions · all time</text>
-  <text x="{w - PAD}" y="60" font-family="{MONO}" font-size="10" text-anchor="end" fill="#3fe06f">{breakdown}<tspan x="{w - PAD}" dy="13" fill="#64746e">{breakdown_all}</tspan></text>
+  <text x="{PAD + 78}" y="60" font-family="{MONO}" font-size="11" fill="#64746e">total contributions</text>
+  <text x="{w - PAD}" y="60" font-family="{MONO}" font-size="10" text-anchor="end" fill="#3fe06f">{v(commits)} commits · {v(prs)} PRs · {v(issues)} issues<tspan x="{w - PAD}" dy="13" fill="#64746e">in the last 365 days</tspan></text>
   {ml}
   {cells}
   {highlight}
@@ -160,7 +156,7 @@ def main() -> int:
 '''
     with open(OUT, "w", encoding="utf-8") as f:
         f.write(svg)
-    print(f"activity.svg: {n} weeks, total={total} ({breakdown})")
+    print(f"activity.svg: {n} weeks, total={v(total_all)} ({v(commits)} commits · {v(prs)} PRs · {v(issues)} issues · 365d)")
     return 0
 
 
