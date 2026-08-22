@@ -40,7 +40,7 @@ $ cgycorey --stack
 | [HKUDS/OpenOPC](https://github.com/HKUDS/OpenOPC) | AI-native company agents |
 | [rooster-code](https://github.com/cgycorey/rooster-code) | agentic coding framework |
 | [searxng_search_mcp](https://github.com/cgycorey/searxng_search_mcp) | search wired into model context |
-| [visual-mcp](https://github.com/cgycorey/visual-mcp) | computer vision for models |
+| [code_puppy](https://github.com/cgycorey/code_puppy) | agentic AI for writing code |
 
 <br/>
 
