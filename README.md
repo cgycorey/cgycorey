@@ -30,9 +30,9 @@ $ cgycorey --whoami
 
 | lane | repos | what |
 |---|---|---|
-| **agents** | [rooster-code](https://github.com/cgycorey/rooster-code) · [code_puppy](https://github.com/cgycorey/code_puppy) | agentic coding frameworks |
+| **agents** | [rooster-code](https://github.com/cgycorey/rooster-code) · [OpenOPC](https://github.com/cgycorey/OpenOPC) | agentic coding & AI-native companies |
 | **mcp** | [searxng_search_mcp](https://github.com/cgycorey/searxng_search_mcp) · [visual-mcp](https://github.com/cgycorey/visual-mcp) | model-context tooling |
-| **trading** | [Vibe-Trading](https://github.com/cgycorey/Vibe-Trading) · [OpenOPC](https://github.com/cgycorey/OpenOPC) | personal AI trading agents |
+| **trading** | [Vibe-Trading](https://github.com/cgycorey/Vibe-Trading) | personal AI trading agent |
 
 <br/>
 
