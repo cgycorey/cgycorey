@@ -38,7 +38,9 @@ $ cgycorey --whoami
 
 ### ▸ live signal
 
-<img src="https://github-readme-stats.vercel.app/api?username=cgycorey&show_icons=true&title_color=9dff3d&text_color=e9f0ea&icon_color=3fe06f&bg_color=0b0e0d&hide_border=true&hide=contribs" alt="github stats" />
+```text
+22 repos · 10 followers · pull shark ×2 · arctic code vault
+```
 
 <br/>
 
