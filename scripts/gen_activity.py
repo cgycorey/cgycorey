@@ -88,10 +88,17 @@ def main() -> int:
     issues = search_count(f"type:issue author:{OWNER} created:>{since}")
     total = sum(x for x in (commits, prs, issues) if x >= 0)
 
+    # all-time (lifetime) totals for the headline
+    commits_all = search_count(f"author:{OWNER}", "commits")
+    prs_all = search_count(f"type:pr author:{OWNER}")
+    issues_all = search_count(f"type:issue author:{OWNER}")
+    total_all = sum(x for x in (commits_all, prs_all, issues_all) if x >= 0)
+
     def v(x: int) -> str:
         return "…" if x < 0 else f"{x:,}"
 
-    breakdown = f"{v(commits)} commits · {v(prs)} PRs · {v(issues)} issues"
+    breakdown = f"{v(commits)} commits · {v(prs)} PRs · {v(issues)} issues · 365d"
+    breakdown_all = f"{v(commits_all)} commits · {v(prs_all)} PRs · {v(issues_all)} issues · all time"
 
     w = PAD * 2 + n * CELL + (n - 1) * GAP
     h = 72 + 7 * CELL + 6 * GAP + 18
@@ -141,9 +148,9 @@ def main() -> int:
   <rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" fill="#0b0e0d" stroke="#1c2421" rx="6"/>
   <text x="{PAD}" y="30" font-family="{MONO}" font-size="10" letter-spacing="2" fill="#46524d">ACTIVITY — LAST {n} WEEKS</text>
   <rect x="{PAD}" y="38" width="24" height="2" fill="#9dff3d"/>
-  <text x="{PAD}" y="60" font-family="{MONO}" font-size="26" font-weight="700" fill="#9dff3d">{v(total)}</text>
-  <text x="{PAD + 78}" y="60" font-family="{MONO}" font-size="11" fill="#64746e">total contributions · 365 days</text>
-  <text x="{w - PAD}" y="60" font-family="{MONO}" font-size="11" text-anchor="end" fill="#3fe06f">{breakdown}</text>
+  <text x="{PAD}" y="60" font-family="{MONO}" font-size="26" font-weight="700" fill="#9dff3d">{v(total_all)}</text>
+  <text x="{PAD + 78}" y="60" font-family="{MONO}" font-size="11" fill="#64746e">total contributions · all time</text>
+  <text x="{w - PAD}" y="60" font-family="{MONO}" font-size="10" text-anchor="end" fill="#3fe06f">{breakdown}<tspan x="{w - PAD}" dy="13" fill="#64746e">{breakdown_all}</tspan></text>
   {ml}
   {cells}
   {highlight}
