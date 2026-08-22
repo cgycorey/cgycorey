@@ -36,14 +36,6 @@ $ cgycorey --whoami
 
 <br/>
 
-### ▸ live signal
-
-```text
-22 repos · 10 followers · pull shark ×2 · arctic code vault
-```
-
-<br/>
-
 ```text
 [cgycorey@github ~]$ exit
 ```
