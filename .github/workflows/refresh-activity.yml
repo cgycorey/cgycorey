@@ -1,7 +1,7 @@
 name: refresh activity
 on:
   schedule:
-    - cron: "0 6 * * 1"  # every Monday 06:00 UTC
+    - cron: "0 6 */2 * *"  # every 2 days at 06:00 UTC
   workflow_dispatch: {}
 
 permissions:
