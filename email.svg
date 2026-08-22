@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="56" viewBox="0 0 360 56" role="img" aria-label="contact">
+  <title>contact</title>
+  <defs>
+    <linearGradient id="chipAccent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9dff3d"/>
+      <stop offset="1" stop-color="#3fe06f"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="359" height="55" rx="6" fill="#0b0e0d" stroke="#1c2421"/>
+
+  <text x="16" y="21" font-family="ui-monospace, 'Cascadia Mono', 'SF Mono', 'Ubuntu Mono', Menlo, Consolas, monospace" font-size="10" letter-spacing="2" fill="#46524d">CONTACT</text>
+  <rect x="16" y="28" width="24" height="2" fill="url(#chipAccent)"/>
+
+  <text x="16" y="43" font-family="ui-monospace, 'Cascadia Mono', 'SF Mono', 'Ubuntu Mono', Menlo, Consolas, monospace" font-size="15" fill="#3fe06f">▸</text>
+  <text x="32" y="43" font-family="ui-monospace, 'Cascadia Mono', 'SF Mono', 'Ubuntu Mono', Menlo, Consolas, monospace" font-size="15" fill="#e9f0ea">
+    <tspan>cgycorey</tspan>
+    <tspan fill="#3fe06f">&#0064;</tspan>
+    <tspan>hotmail</tspan>
+    <tspan fill="#3fe06f">&#0046;</tspan>
+    <tspan>com</tspan>
+  </text>
+</svg>

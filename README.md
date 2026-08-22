@@ -1,16 +1,49 @@
-## Hi there 👋
+<div align="center">
 
-<!--
-**cgycorey/cgycorey** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<img src="https://raw.githubusercontent.com/cgycorey/cgycorey/main/banner.svg" alt="cgycorey — ops console" width="100%" />
 
-Here are some ideas to get you started:
+<br/>
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+```text
+$ cgycorey --whoami
+▸ builder of coding agents · MCP tooling · quant systems
+```
+
+</div>
+
+| | |
+|---|---|
+| **focus** | agentic coding · MCP servers · trading / quant research |
+| **stack** | Python · TypeScript · FastAPI · uv · git |
+| **now** | contributing to [HKUDS/Vibe-Trading](https://github.com/HKUDS/Vibe-Trading) & [OpenOPC](https://github.com/HKUDS/OpenOPC) |
+| **signal** | 22 repos · 10 followers · Pull Shark ×2 · Arctic Code Vault |
+
+<br/>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/cgycorey/cgycorey/main/email.svg" alt="contact" width="360" />
+</p>
+
+<br/>
+
+### ▸ missions
+
+| lane | repos | what |
+|---|---|---|
+| **agents** | [rooster-code](https://github.com/cgycorey/rooster-code) · [code_puppy](https://github.com/cgycorey/code_puppy) | agentic coding frameworks |
+| **mcp** | [searxng_search_mcp](https://github.com/cgycorey/searxng_search_mcp) · [visual-mcp](https://github.com/cgycorey/visual-mcp) | model-context tooling |
+| **trading** | [Vibe-Trading](https://github.com/cgycorey/Vibe-Trading) · [OpenOPC](https://github.com/cgycorey/OpenOPC) | personal AI trading agents |
+
+<br/>
+
+### ▸ live signal
+
+<img src="https://github-readme-stats.vercel.app/api?username=cgycorey&show_icons=true&title_color=9dff3d&text_color=e9f0ea&icon_color=3fe06f&bg_color=0b0e0d&hide_border=true&hide=contribs" alt="github stats" />
+
+<br/>
+
+```text
+[cgycorey@github ~]$ exit
+```
+
+<div align="center"><sub>crafted in a terminal · rendered by github</sub></div>
