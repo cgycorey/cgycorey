@@ -3,6 +3,7 @@
 
 Fetches GitHub's own contribution calendar (public) and renders a heatmap
 styled to match the profile banner. Runs weekly via GitHub Actions.
+Highlights the current (latest) week with a pulsing accent frame.
 """
 import datetime
 import os
@@ -69,6 +70,16 @@ def main() -> int:
             fill = LV[lvl] if 0 <= lvl < len(LV) else LV[0]
             cells += f'<rect x="{x_of(ci)}" y="{y_of(ri)}" width="{CELL}" height="{CELL}" rx="2" fill="{fill}"/>'
 
+    # highlight: pulsing frame + NOW tag on the current (latest) week column
+    last_ci = n - 1
+    fx, fy = x_of(last_ci) - 2, y_of(0) - 2
+    fw, fh = CELL + 4, 7 * CELL + 6 * GAP + 4
+    highlight = (
+        f'<rect x="{fx}" y="{fy}" width="{fw}" height="{fh}" rx="3" fill="none" stroke="#9dff3d" stroke-width="1.5">'
+        f'<animate attributeName="opacity" values="1;0.25;1" dur="2.4s" repeatCount="indefinite"/></rect>'
+        f'<text x="{fx + fw / 2}" y="{fy - 6}" font-family="{MONO}" font-size="9" fill="#9dff3d" text-anchor="middle">NOW</text>'
+    )
+
     legend = ""
     for i, c in enumerate(LV):
         x = w - PAD - (len(LV) - i) * (CELL + 2)
@@ -87,13 +98,14 @@ def main() -> int:
   <text x="{PAD + 70}" y="60" font-family="{MONO}" font-size="11" fill="#64746e">active days</text>
   {ml}
   {cells}
+  {highlight}
   <text x="{PAD}" y="{h - 10}" font-family="{MONO}" font-size="10" fill="#3fe06f">▸ auto-refreshed weekly</text>
   {legend}
 </svg>
 '''
     with open(OUT, "w", encoding="utf-8") as f:
         f.write(svg)
-    print(f"activity.svg: {n} weeks, {active} active days")
+    print(f"activity.svg: {n} weeks, {active} active days, current week highlighted")
     return 0
 
 
