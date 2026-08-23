@@ -4,27 +4,19 @@
 
 <br/>
 
-```text
-$ cgycorey --whoami
-▸ building AI agents · LLM applications · quant finance
-```
-
-```text
-$ cgycorey --stack
-▸ python    fastapi    uv
-▸ llms      mcp        agent loops
-▸ pandas    numpy      quant
-```
+<a href="https://github.com/cgycorey?tab=contributions">
+  <img src="https://ghchart.rshah.org/cgycorey" alt="GitHub contribution graph — last 12 months" width="100%" />
+</a>
 
 </div>
+
+### ▸ profile
 
 <table>
   <tr><td><b>focus</b></td><td>AI agents · LLM applications · quant finance</td></tr>
   <tr><td><b>stack</b></td><td>Python · FastAPI · LLM APIs · uv</td></tr>
   <tr><td><b>now</b></td><td>shipping agentic systems, MCP servers, and quant tooling</td></tr>
 </table>
-
-<br/>
 
 ### ▸ contributions
 
