@@ -18,11 +18,11 @@ $ cgycorey --stack
 
 </div>
 
-| | |
-|---|---|
-| **focus** | AI agents · LLM applications · quant finance |
-| **stack** | Python · FastAPI · LLM APIs · uv |
-| **now** | shipping agentic systems, MCP servers, and quant tooling |
+<table>
+  <tr><td><b>focus</b></td><td>AI agents · LLM applications · quant finance</td></tr>
+  <tr><td><b>stack</b></td><td>Python · FastAPI · LLM APIs · uv</td></tr>
+  <tr><td><b>now</b></td><td>shipping agentic systems, MCP servers, and quant tooling</td></tr>
+</table>
 
 <br/>
 
