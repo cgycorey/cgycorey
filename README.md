@@ -4,12 +4,6 @@
 
 <br/>
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/cgycorey/cgycorey/main/activity.svg" alt="commit activity — last 53 weeks" width="100%" />
-</p>
-
-<br/>
-
 ```text
 $ cgycorey --whoami
 ▸ building AI agents · LLM applications · quant finance
