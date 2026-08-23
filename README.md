@@ -5,7 +5,7 @@
 <br/>
 
 <a href="https://github.com/cgycorey?tab=contributions">
-  <img src="https://ghchart.rshah.org/cgycorey" alt="GitHub contribution graph — last 12 months" width="100%" />
+  <img src="https://gh-heat.anishroy.com/api/cgycorey/svg" alt="GitHub contribution graph — last 12 months" width="100%" />
 </a>
 
 </div>
