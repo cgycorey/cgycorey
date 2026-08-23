@@ -20,7 +20,7 @@ $ cgycorey --stack
 
 | | |
 |---|---|
-| **focus** | AI agents · LLM applications · quantitative finance |
+| **focus** | AI agents · LLM applications · quant finance |
 | **stack** | Python · FastAPI · LLM APIs · uv |
 | **now** | shipping agentic systems, MCP servers, and quant tooling |
 
@@ -39,7 +39,9 @@ $ cgycorey --stack
 <br/>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/cgycorey/cgycorey/main/email.svg" alt="contact" width="360" />
+  <a href="mailto:cgycorey@hotmail.com">
+    <img src="https://raw.githubusercontent.com/cgycorey/cgycorey/main/email.svg" alt="contact — cgycorey@hotmail.com" width="360" />
+  </a>
 </p>
 
 <br/>
