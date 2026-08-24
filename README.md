@@ -27,5 +27,3 @@
 ```text
 [cgycorey@github ~]$ exit
 ```
-
-<div align="center"><sub>crafted in a terminal · rendered by github</sub></div>
