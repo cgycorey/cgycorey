@@ -2,24 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/cgycorey/cgycorey/main/banner.svg" alt="cgycorey — ops console" width="100%" />
 
-<br/>
-
-<a href="https://github.com/cgycorey?tab=contributions">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://gh-heat.anishroy.com/api/cgycorey/svg?darkMode=true" />
-    <img src="https://gh-heat.anishroy.com/api/cgycorey/svg" alt="GitHub contribution graph — last 12 months" width="100%" />
-  </picture>
-</a>
-
 </div>
-
-### ▸ profile
-
-<table>
-  <tr><td><b>focus</b></td><td>AI agents · LLM applications · quant finance</td></tr>
-  <tr><td><b>stack</b></td><td>Python · FastAPI · LLM APIs · uv</td></tr>
-  <tr><td><b>now</b></td><td>shipping agentic systems, MCP servers, and quant tooling</td></tr>
-</table>
 
 ### ▸ contributions
 
