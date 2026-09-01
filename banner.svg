@@ -41,11 +41,11 @@
 
   <!-- role -->
   <text x="34" y="198" font-family="ui-monospace, 'Cascadia Mono', 'SF Mono', 'Ubuntu Mono', Menlo, Consolas, monospace" font-size="17" fill="#3fe06f">▸</text>
-  <text x="54" y="198" font-family="ui-monospace, 'Cascadia Mono', 'SF Mono', 'Ubuntu Mono', Menlo, Consolas, monospace" font-size="17" fill="#e9f0ea">AI agents</text>
-  <text x="150" y="198" font-family="ui-monospace, 'Cascadia Mono', 'SF Mono', 'Ubuntu Mono', Menlo, Consolas, monospace" font-size="17" fill="#46524d">·</text>
-  <text x="164" y="198" font-family="ui-monospace, 'Cascadia Mono', 'SF Mono', 'Ubuntu Mono', Menlo, Consolas, monospace" font-size="17" fill="#e9f0ea">LLM applications</text>
-  <text x="312" y="198" font-family="ui-monospace, 'Cascadia Mono', 'SF Mono', 'Ubuntu Mono', Menlo, Consolas, monospace" font-size="17" fill="#46524d">·</text>
-  <text x="326" y="198" font-family="ui-monospace, 'Cascadia Mono', 'SF Mono', 'Ubuntu Mono', Menlo, Consolas, monospace" font-size="17" fill="#e9f0ea">quant finance</text>
+  <text x="54" y="198" textLength="92" lengthAdjust="spacing" font-family="ui-monospace, 'Cascadia Mono', 'SF Mono', 'Ubuntu Mono', Menlo, Consolas, monospace" font-size="17" fill="#e9f0ea">AI agents</text>
+  <text x="162" y="198" font-family="ui-monospace, 'Cascadia Mono', 'SF Mono', 'Ubuntu Mono', Menlo, Consolas, monospace" font-size="17" fill="#46524d">·</text>
+  <text x="188" y="198" textLength="164" lengthAdjust="spacing" font-family="ui-monospace, 'Cascadia Mono', 'SF Mono', 'Ubuntu Mono', Menlo, Consolas, monospace" font-size="17" fill="#e9f0ea">LLM applications</text>
+  <text x="368" y="198" font-family="ui-monospace, 'Cascadia Mono', 'SF Mono', 'Ubuntu Mono', Menlo, Consolas, monospace" font-size="17" fill="#46524d">·</text>
+  <text x="394" y="198" textLength="133" lengthAdjust="spacing" font-family="ui-monospace, 'Cascadia Mono', 'SF Mono', 'Ubuntu Mono', Menlo, Consolas, monospace" font-size="17" fill="#e9f0ea">quant finance</text>
 
   <!-- telemetry -->
   <text x="740" y="96" font-family="ui-monospace, 'Cascadia Mono', 'SF Mono', 'Ubuntu Mono', Menlo, Consolas, monospace" font-size="11" fill="#46524d">telemetry</text>
